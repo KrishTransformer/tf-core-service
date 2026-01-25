@@ -1,0 +1,54 @@
+name: CI/CD with Maven and Docker
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-java:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # 1. Checkout the repository
+      - uses: actions/checkout@v4
+
+      # 2. Set up JDK 17 (match your pom.xml and Dockerfile)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # 3. Build the project with Maven
+      - name: Build with Maven
+        run: mvn -B clean package --file pom.xml
+
+      # 4. Build and push Docker image using official Docker actions
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: |
+            rajeshmylsamy/tf-core-service:v1
+            rajeshmylsamy/tf-core-service:latest
+
+      # 5. Trigger Webhook for deployment
+      - name: Webhook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: "http://164.52.197.201:8085/hooks/redeploy-tf-core-service"
