@@ -1,0 +1,30 @@
+'Oil Level Indicator
+Ref_OLGLgh = (Int((cons_Dia * 0.9) / 5)) * 3
+
+Select Case Ref_OLGLgh
+	Case Is <= 135
+		cons_Olg_L1 = 132
+		cons_Olg_Nos = 1
+		cons_Olg_Stud_Row_Nos = 2
+		cons_Olg_L2 = 116
+	Case Is <= 200
+		cons_Olg_L1 = 196
+		cons_Olg_Nos = 1
+		cons_Olg_Stud_Row_Nos = 3
+		cons_Olg_L2 = 90
+	Case Is <= 300
+		cons_Olg_L1 = 256
+		cons_Olg_Nos = 1
+		cons_Olg_Stud_Row_Nos = 4
+		cons_Olg_L2 = 80
+	Case Is <= 400
+		cons_Olg_L1 = 196
+		cons_Olg_Nos = 2
+		cons_Olg_Stud_Row_Nos = 3
+		cons_Olg_L2 = 90
+	Case Is > 400
+		cons_Olg_L1 = 256
+		cons_Olg_Nos = 2
+		cons_Olg_Stud_Row_Nos = 4
+		cons_Olg_L2 = 80
+End Select

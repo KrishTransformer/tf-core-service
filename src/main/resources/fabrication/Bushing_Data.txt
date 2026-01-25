@@ -1,0 +1,838 @@
+Case Is <= 500
+	If cableBox = True Then
+		ph2ph = 40
+		ph2earth = 40
+	Else:
+		ph2ph = 40
+		ph2earth = 40
+	End If
+	TankClrnce = 30
+	blength = 50
+	noofpeticoat = 1
+
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 50
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 30
+				Bushing_L1 = 45
+				Bushing_L2 = 25
+				Cap_Dia = 28
+				SupFlangePCD = ""
+			Else
+				boltdia = 12
+				boredia = 30
+				Bushing_L1 = 45
+				Bushing_L2 = 25
+				Cap_Dia = 28
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 630
+			peticoat = 70
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 45
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 40
+				SupFlangePCD = ""
+			Else
+				boltdia = 20
+				boredia = 45
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 40
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 1000
+			peticoat = 90
+			If cableBox = True Then
+				boltdia = 30
+				boredia = 56
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 56
+				SupFlangePCD = ""
+			Else
+				boltdia = 30
+				boredia = 56
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 56
+				SupFlangeDia = 90
+				SupFlangePCD = ""
+			End If
+		Case Is <= 2000
+			peticoat = 104
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangePCD = ""
+			Else
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is > 2000
+			peticoat = 125
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 90
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 80
+				SupFlangePCD = ""
+			Else
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+	End Select
+
+
+Case Is <= 1000
+	If cableBox = True Then
+		ph2ph = 120
+		ph2earth = 120
+	Else
+		ph2ph = 120
+		ph2earth = 120
+	End If
+	TankClrnce = 30
+	blength = 55
+
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 50
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 30
+				Bushing_L1 = 45
+				Bushing_L2 = 25
+				Cap_Dia = 28
+				SupFlangePCD = ""
+			Else
+				boltdia = 12
+				boredia = 30
+				Bushing_L1 = 45
+				Bushing_L2 = 25
+				Cap_Dia = 28
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 630
+			peticoat = 70
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 45
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 40
+				SupFlangePCD = ""
+			Else
+				boltdia = 20
+				boredia = 45
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 40
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 1000
+			peticoat = 90
+			If cableBox = True Then
+				boltdia = 30
+				boredia = 56
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 56
+				SupFlangePCD = ""
+			Else
+				boltdia = 30
+				boredia = 56
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 56
+				SupFlangeDia = 90
+				SupFlangePCD = ""
+			End If
+		Case Is <= 2000
+			peticoat = 104
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangePCD = ""
+			Else
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is > 2000
+			peticoat = 125
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 90
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 80
+				SupFlangePCD = ""
+			Else
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 55
+				Bushing_L2 = 25
+				Cap_Dia = 70
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+	End Select
+
+Case Is <= 3600
+	If cableBox = True Then
+		ph2ph = 120
+		ph2earth = 120
+	Else
+		ph2ph = 120
+		ph2earth = 120
+	End If
+	TankClrnce = 60
+	blength = 85
+	noofpeticoat = 1
+	
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 75
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 40
+				Cap_Dia = 32
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				SupFlangePCD = ""
+			Else
+				boltdia = 12
+				boredia = 40
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				Cap_Dia = 32
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 630
+			peticoat = 90
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 45
+				Cap_Dia = 47
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				SupFlangePCD = ""
+			Else
+				boltdia = 20
+				boredia = 45
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				Cap_Dia = 47
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 1000
+			peticoat = 110
+			If cableBox = True Then
+				boltdia = 30
+				boredia = 55
+				Cap_Dia = 65
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				SupFlangePCD = ""
+			Else
+				boltdia = 30
+				boredia = 55
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				Cap_Dia = 65
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is <= 2000
+			peticoat = 125
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 70
+				Cap_Dia = 80
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				SupFlangePCD = ""
+			Else
+				boltdia = 42
+				boredia = 70
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				Cap_Dia = 80
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+		Case Is > 2000
+			peticoat = 145
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 90
+				Cap_Dia = 100
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				SupFlangePCD = ""
+			Else
+				boltdia = 48
+				boredia = 90
+				Bushing_L1 = 85
+				Bushing_L2 = 50
+				Cap_Dia = 100
+				SupFlangeDia = ""
+				SupFlangePCD = ""
+			End If
+	End Select
+	
+Case Is <= 17500
+	If cableBox = True Then
+		ph2ph = 105
+		ph2earth = 105
+	Else
+		ph2ph = 280
+		ph2earth = 140
+	End If
+	TankClrnce = 100
+	blength = 235
+	noofpeticoat = 2
+	
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 140
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 230
+				Bushing_L2 = 65
+				Cap_Dia = 50
+				SupFlangePCD = 95
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 4
+			Else
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 230
+				Bushing_L2 = 65
+				Cap_Dia = 50
+				SupFlangePCD = 123
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 630
+			peticoat = 150
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 230
+				Bushing_L2 = 65
+				Cap_Dia = 60
+				SupFlangePCD = 140
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 230
+				Bushing_L2 = 65
+				Cap_Dia = 60
+				SupFlangePCD = 140
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 1000
+			peticoat = 170
+			If cableBox = True Then
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 100
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 100
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 2000
+			peticoat = 190
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 134
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 12
+				boredia = 134
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is > 2000
+			peticoat = 190
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 235
+				Bushing_L2 = 90
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+	End Select
+
+Case Is <= 24000
+	If cableBox = True Then
+		ph2ph = 170
+		ph2earth = 170
+	Else
+		ph2ph = 330
+		ph2earth = 230
+	End If
+	TankClrnce = 125
+	blength = 310
+	noofpeticoat = 3
+	
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 155
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 305
+				Bushing_L2 = 80
+				Cap_Dia = 50
+				SupFlangePCD = 123
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 4
+			Else
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 305
+				Bushing_L2 = 80
+				Cap_Dia = 50
+				SupFlangePCD = 123
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 4
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 630
+			peticoat = 165
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 305
+				Bushing_L2 = 80
+				Cap_Dia = 100
+				SupFlangePCD = 140
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 6
+			Else
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 305
+				Bushing_L2 = 80
+				Cap_Dia = 100
+				SupFlangePCD = 140
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 1000
+			peticoat = 185
+			If cableBox = True Then
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 2000
+			peticoat = 210
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 134
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 42
+				boredia = 134
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is > 2000
+			peticoat = 210
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 310
+				Bushing_L2 = 100
+				Cap_Dia = 120
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+	End Select
+
+Case Is <= 36000
+	If cableBox = True Then
+		ph2ph = 200
+		ph2earth = 200
+	Else
+		ph2ph = 350
+		ph2earth = 320
+	End If
+	TankClrnce = 150
+	blength = 410
+	noofpeticoat = 4
+	
+	' Get other Dimensions w.r.t Current Rating
+	Select Case current
+		Case Is <= 250
+			peticoat = 200
+			If cableBox = True Then
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 405
+				Bushing_L2 = 80
+				Cap_Dia = 45
+				SupFlangePCD = 123
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 4
+			Else
+				boltdia = 12
+				boredia = 75
+				Bushing_L1 = 405
+				Bushing_L2 = 80
+				Cap_Dia = 45
+				SupFlangePCD = 123
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 4
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 630
+			peticoat = 208
+			If cableBox = True Then
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 410
+				Bushing_L2 = 100
+				Cap_Dia = 53
+				SupFlangePCD = 140
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 6
+			Else
+				boltdia = 20
+				boredia = 90
+				Bushing_L1 = 410
+				Bushing_L2 = 100
+				Cap_Dia = 53
+				SupFlangePCD = 140
+				Stud_L = 55
+				Stud_Dia = 10
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			 End If
+		Case Is <= 1000
+			 peticoat = 230
+			 If cableBox = True Then
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 80
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 30
+				boredia = 110
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 80
+				SupFlangePCD = 180
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is <= 2000
+			peticoat = 260
+			If cableBox = True Then
+				boltdia = 42
+				boredia = 134
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 100
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 42
+				boredia = 134
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 100
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+		Case Is > 2000
+			peticoat = 260
+			If cableBox = True Then
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 100
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+			Else
+				boltdia = 48
+				boredia = 134
+				Bushing_L1 = 415
+				Bushing_L2 = 125
+				Cap_Dia = 100
+				SupFlangePCD = 200
+				Stud_L = 65
+				Stud_Dia = 12
+				Stud_Nos = 6
+				SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+			End If
+	End Select
+	
+Case Is <= 52000
+	ph2ph = 530
+	ph2earth = 530 ' 480
+	TankClrnce = 175
+	blength = 460
+	noofpeticoat = 11
+	
+	' Higher voltage 630A taken restOfVariables temporarily
+	Select Case current
+		Case Is <= 1000
+			peticoat = 200
+			boltdia = 30
+			boredia = 140
+			Bushing_L1 = 525
+			Bushing_L2 = 280
+			Cap_Dia = 148
+			SupFlangePCD = 210
+			Stud_L = 65
+			Stud_Dia = 15
+			Stud_Nos = 6
+			SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+		Case Is <= 1600
+			peticoat = 208
+			boltdia = 60
+			boredia = 135
+			Bushing_L1 = 525
+			Bushing_L2 = 280
+			Cap_Dia = 148
+			SupFlangePCD = 210
+			Stud_L = 65
+			Stud_Dia = 15
+			Stud_Nos = 8
+			SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+		Case Is <= 2000
+			peticoat = 208
+			boltdia = 60
+			boredia = 135
+			Bushing_L1 = 525
+			Bushing_L2 = 280
+			Cap_Dia = 148
+			SupFlangePCD = 210
+			Stud_L = 65
+			Stud_Dia = 15
+			Stud_Nos = 8
+			SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+		Case Is > 2000
+			peticoat = 208
+			boltdia = 60
+			boredia = 135
+			Bushing_L1 = 525
+			Bushing_L2 = 280
+			Cap_Dia = 148
+			SupFlangePCD = 210
+			Stud_L = 65
+			Stud_Dia = 15
+			Stud_Nos = 8
+			SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+	End Select
+
+Case Is <= 725000
+	ph2ph = 700
+	ph2earth = 700  ' 660
+	TankClrnce = 175
+	blength = 610
+	noofpeticoat = 11
+
+	peticoat = 208
+	boltdia = 60
+	boredia = 120
+	Bushing_L1 = 760
+	Bushing_L2 = 495
+	Cap_Dia = 200
+	SupFlangePCD = 185
+	Stud_L = 65
+	Stud_Dia = 15
+	Stud_Nos = 8
+	SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+Case Is <= 145000
+	ph2ph = 1220
+	ph2earth = 1220
+	TankClrnce = 220
+	blength = 1060
+	noofpeticoat = 11
+	
+	boltdia = 60
+	boredia = 120
+	Bushing_L1 = 760
+	Bushing_L2 = 495
+	Cap_Dia = 200
+	SupFlangePCD = 185
+	Stud_L = 65
+	Stud_Dia = 15
+	Stud_Nos = 8
+	SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+Case Else   'Case Is > 145000
+	ph2ph = 1430
+	ph2earth = 1430
+	TankClrnce = 220
+	blength = 1060
+	noofpeticoat = 11
+	
+	boltdia = 60
+	boredia = 120
+	Bushing_L1 = 760
+	Bushing_L2 = 495
+	Cap_Dia = 200
+	SupFlangePCD = 185
+	Stud_L = 65
+	Stud_Dia = 15
+	Stud_Nos = 8
+	SupFlangeDia = SupFlangePCD + (2 * Stud_Dia)
+End Select

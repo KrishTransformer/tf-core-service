@@ -1,0 +1,54 @@
+'Breather Size selection
+
+Select Case KVA
+	Case Is <= 500
+		cons_Breath_Type = "threaded"
+		cons_Breath_Pipe_ID = 15
+		cons_Breath_Pipe_OD = 21.43
+		cons_Breath_Cap = 125 ' gm
+		cons_Breath_H = 115
+		cons_Breath_Dia = 82
+	Case Is <= 1000
+		cons_Breath_Type = "threaded"
+		cons_Breath_Pipe_ID = 15
+		cons_Breath_Pipe_OD = 21.43
+		cons_Breath_Cap = 500 ' gm
+		cons_Breath_H = 125
+		cons_Breath_Dia = 100
+	Case Is <= 4000
+		cons_Breath_Type = "flanged"
+		cons_Breath_Pipe_ID = 15
+		cons_Breath_Pipe_OD = 21.43
+		cons_Breath_Cap = 1000 ' gm
+		cons_Breath_H = 100
+		cons_Breath_Dia = 150
+		cons_Breath_Flg_OD = 80
+		cons_Breath_Flg_PCD = 58
+		cons_Breath_Flg_Thick = 6
+		cons_Breath_Flg_Bolt_Dia = 12
+		cons_Breath_Flg_Bolt_Nos = 4
+	Case Is <= 5000
+		cons_Breath_Type = "flanged"
+		cons_Breath_Pipe_ID = 15
+		cons_Breath_Pipe_OD = 21.43
+		cons_Breath_Cap = 2000 ' gm
+		cons_Breath_H = 240
+		cons_Breath_Dia = 200
+		cons_Breath_Flg_OD = 80
+		cons_Breath_Flg_PCD = 58
+		cons_Breath_Flg_Thick = 6
+		cons_Breath_Flg_Bolt_Dia = 12
+		cons_Breath_Flg_Bolt_Nos = 4
+	Case Is > 5000
+		cons_Breath_Type = "flanged"
+		cons_Breath_Pipe_ID = 20
+		cons_Breath_Pipe_OD = 27.2
+		cons_Breath_Cap = 3000 ' gm
+		cons_Breath_H = 370
+		cons_Breath_Dia = 190
+		cons_Breath_Flg_OD = 80
+		cons_Breath_Flg_PCD = 58
+		cons_Breath_Flg_Thick = 6
+		cons_Breath_Flg_Bolt_Dia = 12
+		cons_Breath_Flg_Bolt_Nos = 4
+End Select

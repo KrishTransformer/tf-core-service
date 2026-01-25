@@ -1,0 +1,17 @@
+Tank Flange (Curb) Details: 
+
+tank_Flg_W:
+
+For 400kVA and below, Curb Width = 40 mm 
+For 401 kVA to 630 kVA, Curb Width = 50 mm 
+For 631 kVA to 2000 kVA, Curb Width = 65 mm 
+For 2001 kVA to 6300 kVA, Curb Width = 75 mm 
+For 6301 kVA to 8000 kVA, Curb Width = 80 mm
+For 8001 kVA and above, Curb Width = 100 mm 
+
+
+tank_Flg_Bolt_Dia:
+
+Up to 5000kVA, Hole diameter = 12 mm 
+From 5001 kVA to 7000 kVA, Hole diameter = 14 mm 
+Above 7000 kVA, Hole diameter = 18 mm  

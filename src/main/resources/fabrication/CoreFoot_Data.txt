@@ -1,0 +1,51 @@
+'Core Foot Size Selection
+Select Case KVA
+	Case Is <= 40
+		coreFoot_Thick1 = 8
+		coreFoot_L = 50
+		coreFoot_Stud_Hole_Dia = 14 'M12
+		coreFoot_Stud_Hole_Nos = 2   'Per Plate
+		coreFoot_Nos = 2
+	Case Is <= 200
+		coreFoot_Thick1 = 10
+		coreFoot_L = 75
+		coreFoot_Stud_Hole_Dia = 14 'M12
+		coreFoot_Stud_Hole_Nos = 2   'Per Plate
+		coreFoot_Nos = 2
+	Case Is <= 1000
+		coreFoot_Thick1 = 10
+		coreFoot_L = 100
+		coreFoot_Stud_Hole_Dia = 14 'M12
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 2
+	Case Is <= 2000
+		coreFoot_Thick1 = 12
+		coreFoot_L = 100
+		coreFoot_Stud_Hole_Dia = 14 'M12
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 3
+	Case Is <= 2500
+		coreFoot_Thick1 = 12
+		coreFoot_L = 125
+		coreFoot_Stud_Hole_Dia = 18 'M16
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 3
+	Case Is <= 5000
+		coreFoot_Thick1 = 16
+		coreFoot_L = 150
+		coreFoot_Stud_Hole_Dia = 18 'M16
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 3
+	Case Is <= 8000
+		coreFoot_Thick1 = 20
+		coreFoot_L = 150
+		coreFoot_Stud_Hole_Dia = 18 'M16
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 3
+	Case Is > 8000
+		coreFoot_Thick1 = 20
+		coreFoot_L = 150
+		coreFoot_Stud_Hole_Dia = 18 'M16
+		coreFoot_Stud_Hole_Nos = 4   'Per Plate
+		coreFoot_Nos = 3
+End Select

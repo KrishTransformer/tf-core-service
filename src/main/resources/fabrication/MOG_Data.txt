@@ -1,0 +1,37 @@
+If KVA < 2500 Then mog_Type = "SO-4" Else mog_Type = "SO-6"
+
+If mog_Type = "SO-6" Then
+	mog_Size = 150
+	mog_Flg_Pipe_OD = 168.3
+	mog_Flg_Pipe_ID = 150
+	If mog_Tlt_Ang <= 0 Then
+		mog_Flg_Pipe_L = 25
+	Else
+		mog_Flg_Pipe_L = 150
+	End If
+	mog_Flg_OD = 234
+	mog_Flg_ID = mog_Flg_Pipe_ID
+	mog_Flg_Thick = 12
+	mog_Flg_PCD = 209.7
+	mog_Flg_Bolt_Dia = 13
+	mog_Flg_Bolt_L = 31
+	mog_Flg_Bolt_Count = 8
+	mog_Model = "MOG_SO6"
+Else
+	mog_Size = 100
+	mog_Flg_Pipe_OD = 141.3
+	mog_Flg_Pipe_ID = 125
+	If mog_Tlt_Ang <= 0 Then
+		mog_Flg_Pipe_L = 25
+	Else
+		mog_Flg_Pipe_L = 150
+	End If
+	mog_Flg_OD = 190
+	mog_Flg_ID = mog_Flg_Pipe_ID
+	mog_Flg_Thick = 12
+	mog_Flg_PCD = 165
+	mog_Flg_Bolt_Dia = 12
+	mog_Flg_Bolt_L = 31
+	mog_Flg_Bolt_Count = 6
+	mog_Model = "MOG_SO4"
+End If

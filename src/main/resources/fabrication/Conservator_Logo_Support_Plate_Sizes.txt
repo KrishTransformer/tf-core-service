@@ -1,0 +1,21 @@
+'Logo Support Plate
+If cons_Dia <= 250 Then
+	cons_Logo_Plate_L = 225
+	cons_Logo_Plate_W = cons_Logo_Plate_L * logo_Aspect_Ratio
+	cons_Logo_Plate_H = 25
+End If
+If cons_Dia > 250 And cons_Dia <= 450 Then
+	cons_Logo_Plate_L = 300
+	cons_Logo_Plate_W = Int(cons_Logo_Plate_L * logo_Aspect_Ratio)
+	cons_Logo_Plate_H = 30
+End If
+If cons_Dia > 550 And cons_Dia <= 550 Then
+	cons_Logo_Plate_L = 375
+	cons_Logo_Plate_W = cons_Logo_Plate_L * logo_Aspect_Ratio
+	cons_Logo_Plate_H = 35
+End If
+If cons_Dia > 550 Then
+	cons_Logo_Plate_L = 450
+	cons_Logo_Plate_W = cons_Logo_Plate_L * logo_Aspect_Ratio
+	cons_Logo_Plate_H = 50
+End If

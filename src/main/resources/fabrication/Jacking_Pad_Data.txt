@@ -1,0 +1,36 @@
+'Tank Jacking Pads Selection
+	Select Case KVA
+		Case Is <= 1000
+			jackpad_L = 150
+			jackpad_W = 100
+			jackpad_W = ""
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 5000
+			jackpad_L = 200
+			jackpad_W = 150
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 10000
+			jackpad_L = 250
+			jackpad_W = 200
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 20000
+			jackpad_L = 300
+			jackpad_W = 250
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 30000
+			jackpad_L = 300
+			jackpad_W = 250
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 40000
+			jackpad_L = 350
+			jackpad_W = 300
+			jackpad_Thick = tank_Flg_Thick
+		Case Is <= 50000
+			jackpad_L = 350
+			jackpad_W = 300
+			jackpad_Thick = tank_Flg_Thick
+		Case Is > 50000
+			jackpad_L = 350
+			jackpad_W = 300
+			jackpad_Thick = tank_Flg_Thick
+	End Select

@@ -1,0 +1,128 @@
+'Conservator Pipe Diameter, Pipe Flange Details, Bucholz size details, Bucholz Valve Flage Details Selection w.r.t KVA Rating
+Select Case KVA
+	Case Is <= 750
+		Min_gap_Tank_Cons = 345
+		Ref_Pipe_L = 580
+		cons_EPlate_Hole_Dia = 10
+		
+		cons_Pipe_ID = 25
+		cons_Pipe_OD = 33.8
+		cons_Pipe_Flg_OD = 115
+		cons_Pipe_Flg_Thick = 10
+		cons_Pipe_Flg_PCD = 85
+		cons_Pipe_Flg_Bolt_Dia = 8
+		cons_Pipe_Flg_Bolt_Nos = 4
+		
+		buch_Rely = False
+		buch_Rely_Vlv = False
+		mog = False
+		
+	Case Is <= 1000
+		Min_gap_Tank_Cons = 345
+		Ref_Pipe_L = 580
+		cons_EPlate_Hole_Dia = 10
+		
+		cons_Pipe_ID = 25
+		cons_Pipe_OD = 33.8
+		cons_Pipe_Flg_OD = 115
+		cons_Pipe_Flg_Thick = 10
+		cons_Pipe_Flg_PCD = 85
+		cons_Pipe_Flg_Bolt_Dia = 8
+		cons_Pipe_Flg_Bolt_Nos = 4
+		
+		buch_Rely = True
+		buch_Rely_L = 128
+		buch_Rely_W = 205
+		buch_Rely_H = 250
+		buch_Rely_Flg_OD = 78 '(Square Flange)
+		buch_Rely_Flg_PCD = 72
+		buch_Rely_Flg_Thick = 10
+		buch_Rely_Flg_Bolt_Dia = 10
+		buch_Rely_Flg_Bolt_Nos = 4
+	   
+		buch_Rely_Vlv = True
+		buch_Rely_Vlv_Nos = 1
+		buch_Rely_Vlv_H = 150
+		buch_Rely_Vlv_L = 80
+		buch_Rely_Vlv_Flg_OD = 115
+		buch_Rely_Vlv_Flg_PCD = 85
+		buch_Rely_Vlv_Flg_Thick = 10
+		buch_Rely_Vlv_Flg_Bolt_Dia = 14
+		buch_Rely_Vlv_Flg_Bolt_Nos = 4
+		
+		mog = False
+		
+	Case Is > 1000
+		Min_gap_Tank_Cons = 635
+		Ref_Pipe_L = 950
+		cons_EPlate_Hole_Dia = 12
+		
+		cons_Pipe_ID = 50
+		cons_Pipe_OD = 60.3
+		cons_Pipe_Flg_OD = 150
+		cons_Pipe_Flg_Thick = 16
+		cons_Pipe_Flg_PCD = 115
+		cons_Pipe_Flg_Bolt_Dia = 18
+		cons_Pipe_Flg_Bolt_Nos = 4
+		
+		buch_Rely = True
+		buch_Rely_L = 184
+		buch_Rely_W = 205
+		buch_Rely_H = 250
+		buch_Rely_Flg_OD = 150
+		buch_Rely_Flg_PCD = 115
+		buch_Rely_Flg_Thick = 16
+		buch_Rely_Flg_Bolt_Dia = 18
+		buch_Rely_Flg_Bolt_Nos = 4
+	   
+		buch_Rely_Vlv = True
+		buch_Rely_Vlv_Nos = 1
+		buch_Rely_Vlv_H = 240
+		buch_Rely_Vlv_L = 110
+		buch_Rely_Vlv_Flg_OD = 150
+		buch_Rely_Vlv_Flg_PCD = 125
+		buch_Rely_Vlv_Flg_Thick = 16
+		buch_Rely_Vlv_Flg_Bolt_Dia = 18
+		buch_Rely_Vlv_Flg_Bolt_Nos = 4
+		
+		mog = True
+		mog_Pos = "on end plate"
+		If Fab_Design_data("mog_Tlt_Ang") = "" Then mog_Tlt_Ang = 0
+		
+	Case Is > 10000
+		Min_gap_Tank_Cons = 925
+		Ref_Pipe_L = 1320
+		cons_EPlate_Hole_Dia = 12
+		
+		cons_Pipe_ID = 80
+		cons_Pipe_OD = 88.9
+		cons_Pipe_Flg_OD = 175
+		cons_Pipe_Flg_Thick = 16
+		cons_Pipe_Flg_PCD = 115
+		cons_Pipe_Flg_Bolt_Dia = 14
+		cons_Pipe_Flg_Bolt_Nos = 4
+		
+		buch_Rely = True
+		buch_Rely_L = 215
+		buch_Rely_W = 220
+		buch_Rely_H = 270
+		buch_Rely_Flg_OD = 185
+		buch_Rely_Flg_PCD = 145
+		buch_Rely_Flg_Thick = 16
+		buch_Rely_Flg_Bolt_Dia = 18
+		buch_Rely_Flg_Bolt_Nos = 4
+	   
+		buch_Rely_Vlv = True
+		buch_Rely_Vlv_Nos = 2
+		buch_Rely_Vlv_H = 300
+		buch_Rely_Vlv_L = 150
+		buch_Rely_Vlv_Flg_OD = 200
+		buch_Rely_Vlv_Flg_PCD = 160
+		buch_Rely_Vlv_Flg_Thick = 16
+		buch_Rely_Vlv_Flg_Bolt_Dia = 18
+		buch_Rely_Vlv_Flg_Bolt_Nos = 8
+
+		mog = True
+		mog_Pos = "on end plate"
+		If Fab_Design_data("mog_Tlt_Ang") = "" Then mog_Tlt_Ang = 0
+End Select

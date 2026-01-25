@@ -1,0 +1,50 @@
+'Lifting Lug Size Calculations:
+	'For Type1 Lifting Lug
+		If tank_LiftLug_Type = "type-1" Then
+			tank_LiftLug_L1 = (tank_Flg_W * 2)
+			tank_LiftLug_H1 = (tank_LiftLug_L1 * 0.6)
+			tank_LiftLug_Thick = tank_Flg_Thick
+			tank_LiftLug_Hole_Dia = (tank_LiftLug_H1 / 2)
+			tank_LiftLug_Vpos = tank_Flg_Thick + (tank_LiftLug_H1 / 2)
+			tank_LiftLug_Hpos = (2 * tank_Flg_Bolt_H_Pch) - tank_Thick
+		End If
+		
+	'For Type2 Lifting Lug
+		If tank_LiftLug_Type = "type-2" Then
+			tank_LiftLug_L1 = (tank_Flg_W * 2)
+			tank_LiftLug_L2 = (tank_LiftLug_L1 / 2)
+			tank_LiftLug_L3 = (tank_LiftLug_L1 / 2)
+			tank_LiftLug_H1 = (tank_LiftLug_L1 * 1.5)
+			tank_LiftLug_H2 = tank_LiftLug_L3
+			tank_LiftLug_H3 = tank_LiftLug_H1 - tank_LiftLug_H2
+			tank_LiftLug_Thick = tank_Flg_Thick
+			tank_LiftLug_Hole_Dia = (tank_LiftLug_L3 / 2)
+			tank_LiftLug_Chamfer = (tank_LiftLug_Thick * 2)
+			
+			tank_LiftLug_Sup_Thick = tank_Flg_Thick
+			tank_LiftLug_Sup_H = tank_LiftLug_H3 + (2 * tank_LiftLug_Sup_Thick)
+			tank_LiftLug_Sup_W = tank_LiftLug_Thick + (6 * tank_LiftLug_Sup_Thick)
+			
+			tank_LiftLug_Vpos = -lid_Thick + tank_LiftLug_H2 + (tank_LiftLug_H3 / 2)
+			tank_LiftLug_Hpos = (2 * tank_Flg_Bolt_H_Pch) - tank_Thick
+		End If
+		
+	'For Type3 Lifting Lug
+		If tank_LiftLug_Type = "type-3" Then
+			tank_LiftLug_L1 = (tank_Flg_W * 1.5)
+			tank_LiftLug_L2 = (tank_LiftLug_L1 / 4)
+			tank_LiftLug_L3 = (tank_LiftLug_L1 / 4)
+			tank_LiftLug_L4 = (tank_LiftLug_L1 / 4)
+			tank_LiftLug_H1 = (tank_LiftLug_L1 * 1.5)
+			tank_LiftLug_H2 = (tank_LiftLug_H1 / 2)
+			tank_LiftLug_H3 = (tank_LiftLug_H2 / 2)
+			tank_LiftLug_Thick = tank_Flg_Thick
+			tank_LiftLug_Chamfer = (tank_LiftLug_L4 / 2)
+			
+			tank_LiftLug_Sup_Thick = tank_Flg_Thick
+			tank_LiftLug_Sup_H = tank_LiftLug_H1 + (tank_LiftLug_Sup_Thick)
+			tank_LiftLug_Sup_W = tank_LiftLug_Thick + (6 * tank_LiftLug_Sup_Thick)
+			
+			tank_LiftLug_Vpos = (tank_LiftLug_Sup_H / 2)
+			tank_LiftLug_Hpos = (2 * tank_Flg_Bolt_H_Pch) - tank_Thick
+		End If

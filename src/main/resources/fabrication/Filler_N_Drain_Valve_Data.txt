@@ -1,0 +1,83 @@
+For Transformer Range with Less than or equal to 315 kVA 
+Filler Valve Flange Data: 
+	- Filler Valve Pipe ID = 20 mm 
+	- Filler Valve Pipe OD = 26.5 mm 
+	- Filler Valve Flange ID = 20 mm 
+	- Filler Valve Flange OD = 100 mm 
+	- Filler Valve Flange PCD = 75 mm 
+	- Filler Valve Flange Thick = 10 mm 
+	- Filler Valve Flange Bolt Hole Diameter = 14 mm 
+	- Filler Valve Flange Bolt Hole Nos = 4 mm 
+
+Drain Valve Flange Data: 
+	- Drain Valve Pipe ID = 20 mm 
+	- Drain Valve Pipe OD = 26.5 mm 
+	- Drain Valve Flange ID = 20 mm 
+	- Drain Valve Flange OD = 100 mm 
+	- Drain Valve Flange PCD = 75 mm 
+	- Drain Valve Flange Thick = 10 mm 
+	- Drain Valve Flange Bolt Hole Diameter = 14 mm 
+	- Drain Valve Flange Bolt Hole Nos = 4 mm 
+
+For Transformer Range is above 315 kVA and less than or equal to 630 kVA 
+Filler Valve Flange Data: 
+	- Filler Valve Pipe ID = 25 mm 
+	- Filler Valve Pipe OD = 33.1 mm 
+	- Filler Valve Flange ID = 25 mm 
+	- Filler Valve Flange OD = 115 mm 
+	- Filler Valve Flange PCD = 85 mm 
+	- Filler Valve Flange Thick = 10 mm 
+	- Filler Valve Flange Bolt Hole Diameter = 14 mm 
+	- Filler Valve Flange Bolt Hole Nos = 4 mm 
+
+Drain Valve Flange Data: 
+	- Drain Valve Pipe ID = 25 mm 
+	- Drain Valve Pipe OD = 33.1 mm 
+	- Drain Valve Flange ID = 5 mm 
+	- Drain Valve Flange OD = 115 mm 
+	- Drain Valve Flange PCD = 85 mm 
+	- Drain Valve Flange Thick = 10 mm 
+	- Drain Valve Flange Bolt Hole Diameter = 14 mm 
+	- Drain Valve Flange Bolt Hole Nos = 4 mm 
+
+For Transformer Range is above 630 kVA and less than or equal to 2000 kVA 
+Filler Valve Flange Data: 
+	- Filler Valve Pipe ID = 32 mm 
+	- Filler Valve Pipe OD = 40.1 mm 
+	- Filler Valve Flange ID = 32 mm 
+	- Filler Valve Flange OD = 120 mm 
+	- Filler Valve Flange PCD = 90 mm 
+	- Filler Valve Flange Thick = 12 mm 
+	- Filler Valve Flange Bolt Hole Diameter = 14 mm 
+	- Filler Valve Flange Bolt Hole Nos = 4 mm 
+
+Drain Valve Flange Data: 
+	- Drain Valve Pipe ID = 32 mm 
+	- Drain Valve Pipe OD = 40.1 mm 
+	- Drain Valve Flange ID = 32 mm 
+	- Drain Valve Flange OD = 120 mm 
+	- Drain Valve Flange PCD = 90 mm 
+	- Drain Valve Flange Thick = 12 mm 
+	- Drain Valve Flange Bolt Hole Diameter = 14 mm 
+	- Drain Valve Flange Bolt Hole Nos = 4 mm 
+
+For Transformer Range is above 10000 kVA 
+Filler Valve Flange Data: 
+	- Filler Valve Pipe ID = 50 mm 
+	- Filler Valve Pipe OD = 59 mm 
+	- Filler Valve Flange ID = 50 mm 
+	- Filler Valve Flange OD = 150 mm 
+	- Filler Valve Flange PCD = 115 mm 
+	- Filler Valve Flange Thick = 12 mm  
+	- Filler Valve Flange Bolt Hole Diameter = 18 mm 
+	- Filler Valve Flange Bolt Hole Nos = 4 mm 
+
+Drain Valve Flange Data: 
+	- Drain Valve Pipe ID = 50 mm 
+	- Drain Valve Pipe OD = 59 mm 
+	- Drain Valve Flange ID = 50 mm 
+	- Drain Valve Flange OD = 150 mm 
+	- Drain Valve Flange PCD = 115 mm 
+	- Drain Valve Flange Thick = 12 mm 
+	- Drain Valve Flange Bolt Hole Diameter = 18 mm 
+	- Drain Valve Flange Bolt Hole Nos = 4 mm 

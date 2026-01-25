@@ -1,0 +1,22 @@
+Vertical Stiffeners Data:
+
+stiffner_Vert_Data:
+
+Up to 250 kVA, Stiffener Type = 50 x 6 – Flat 
+From 251 kVA to 500 kVA, Stiffener Type = 50 x 8 – Flat 
+From 501 kVA to 800 kVA, Stiffener Type = 60 x 8 – Flat 
+From 801 kVA to 1600 kVA, Stiffener Type = 75 x 8 – Flat 
+From 1601 kVA to 2500 kVA, Stiffener Type = 75 x 10– Flat 
+From 2501 kVA to 6300 kVA, Stiffener Type = 75 x 12 – Flat 
+From 6300 kVA and Above, Stiffener Type = 85 x 12 – Flat 
+
+stiffner_Hori_Data:
+
+Up to 250 kVA, Stiffener Type = 40 x 40 x 5 – L-Angle 
+From 251 kVA to 500 kVA, Stiffener Type = 40 x 40 x 6 – L-Angle 
+From 501 kVA to 630 kVA, Stiffener Type = 50 x 50 x 8 – L-Angle 
+From 631 kVA to 800 kVA, Stiffener Type = 60 x 8 – Flat 
+From 801 kVA to 1600 kVA, Stiffener Type = 75 x 8 – Flat 
+From 1601 kVA to 2500 kVA, Stiffener Type = 75 x 10– Flat 
+From 2501 kVA to 6300 kVA, Stiffener Type = 75 x 12 – Flat 
+From 6300 kVA and Above, Stiffener Type = 85 x 12 – Flat

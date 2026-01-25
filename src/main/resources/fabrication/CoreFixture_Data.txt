@@ -1,0 +1,60 @@
+Core Fixture Channel Size Selection
+
+RefDph = core_Dia * 0.8
+
+If RefDph < 100 Then
+	core_Fixture_H = 75: core_Fixture_W = 40: core_Fixture_Thick = 4.8
+	stayrod_Dia = 14: stayrod_Nos = 1: tieRod_Dia = 14
+End If
+If RefDph >= 100 And RefDph < 125 Then
+	core_Fixture_H = 100: core_Fixture_W = 50: core_Fixture_Thick = 5
+	stayrod_Dia = 14: stayrod_Nos = 2: tieRod_Dia = 14
+End If
+If RefDph >= 125 And RefDph < 150 Then
+	core_Fixture_H = 125: core_Fixture_W = 65: core_Fixture_Thick = 5.3
+	stayrod_Dia = 14: stayrod_Nos = 2: tieRod_Dia = 14
+End If
+If RefDph >= 150 And RefDph < 200 Then
+	core_Fixture_H = 150: core_Fixture_W = 75: core_Fixture_Thick = 5.7
+	stayrod_Dia = 18: stayrod_Nos = 2: tieRod_Dia = 18
+End If
+If RefDph >= 200 And RefDph < 250 Then
+	core_Fixture_H = 200: core_Fixture_W = 75: core_Fixture_Thick = 6.2
+	stayrod_Dia = 18: stayrod_Nos = 2: tieRod_Dia = 18
+End If
+If RefDph >= 250 And RefDph < 300 Then
+	core_Fixture_H = 250: core_Fixture_W = 80: core_Fixture_Thick = 7.2
+	stayrod_Dia = 22: stayrod_Nos = 2: tieRod_Dia = 22
+End If
+If RefDph >= 300 And RefDph < 350 Then
+	core_Fixture_H = 300: core_Fixture_W = 90: core_Fixture_Thick = 9.8
+	stayrod_Dia = 26: stayrod_Nos = 2: tieRod_Dia = 26
+End If
+If RefDph >= 350 And RefDph < 400 Then
+	core_Fixture_H = 350: core_Fixture_W = 100: core_Fixture_Thick = 8.3
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 400 And RefDph < 450 Then
+	core_Fixture_H = 400: core_Fixture_W = 100: core_Fixture_Thick = 8.8
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 450 And RefDph < 500 Then
+	core_Fixture_H = 450: core_Fixture_W = 150: core_Fixture_Thick = 10
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 500 And RefDph < 550 Then
+	core_Fixture_H = 500: core_Fixture_W = 150: core_Fixture_Thick = 10
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 550 And RefDph < 600 Then
+	core_Fixture_H = 550: core_Fixture_W = 150: core_Fixture_Thick = 12
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 600 And RefDph < 650 Then
+	core_Fixture_H = 600: core_Fixture_W = 180: core_Fixture_Thick = 15
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If
+If RefDph >= 650 And RefDph < 700 Then //** use this as else part **//
+	core_Fixture_H = 650: core_Fixture_W = 200: core_Fixture_Thick = 15
+	stayrod_Dia = 32: stayrod_Nos = 2: tieRod_Dia = 32
+End If

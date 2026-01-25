@@ -1,0 +1,105 @@
+'Inspection Cover Calculations
+	'Inspection Cover numbers & Positioning Logic
+		'If Both HV & LV are mounted on "Tank" Then:
+			If hvb_Pos = "tank" And lvb_Pos = "tank" Then
+				inspect_Cover = True
+				inspect_Cover_Nos = 2
+				inspect_Cover_W = 150
+				inspect_Cover_L = (hvb_Ptch * 2)
+				
+				inspect_Cover_1_V_Pos = -(tank_W / 2) + 50 + (inspect_Cover_W / 2)              'From HV Side tank wall
+				inspect_Cover_1_H_Pos = 0
+				
+				inspect_Cover_2_V_Pos = (tank_W / 2) - 50 - (inspect_Cover_W / 2)              'From LV Side tank wall
+				inspect_Cover_2_H_Pos = 0
+			End If
+		
+		'If HV Bushing is mounted on "Lid" & LV Bushing is mounted on "Tank" then
+			If hvb_Pos = "lid" And lvb_Pos = "tank" Then
+				inspect_Cover = True
+				inspect_Cover_Nos = 1
+				inspect_Cover_W = 150
+				inspect_Cover_L = (lvb_Ptch * 2)
+				
+				inspect_Cover_1_V_Pos = (tank_W / 2) - 50 - (inspect_Cover_W / 2)              'From LV Side tank wall
+				inspect_Cover_1_H_Pos = 0
+			End If
+			
+		'If HV Bushing is mounted on "Tank" & LV Bushing is mounted on "Lid" then
+			If hvb_Pos = "tank" And lvb_Pos = "lid" Then
+				inspect_Cover = True
+				inspect_Cover_Nos = 1
+				inspect_Cover_W = 150
+				inspect_Cover_L = (hvb_Ptch * 2)
+				
+				inspect_Cover_1_V_Pos = -(tank_W / 2) + 50 + (inspect_Cover_W / 2)              'From HV Side tank wall
+				inspect_Cover_1_H_Pos = 0
+			End If
+			
+		'If Both HV & LV are mounted on "Lid" Then:
+			If hvb_Pos = "lid" And lvb_Pos = "lid" Then
+				'Inspection Cover Dimensions
+					If (tank_W - (hvb_tank_Oil_Clear + (hvb_Sup_OD / 4)) - (lvb_tank_Oil_Clear + (lvb_Sup_ID)) - 25) >= 200 Then   '25=Clearence
+						inspect_Cover = True
+						inspect_Cover_W = 200
+						inspect_Cover_L = (Int((hvb_Ptch - 40) / 10) * 10) - 40
+					ElseIf (tank_W - (hvb_Sup_V_Pos + (hvb_Sup_OD / 4)) - (lvb_tank_Oil_Clear + (lvb_Sup_ID)) - 25) >= 100 Then
+						inspect_Cover = True
+						inspect_Cover_W = 100
+						inspect_Cover_L = (Int((hvb_Ptch - 40) / 10) * 10) - 40
+					Else
+						inspect_Cover = False
+					End If
+				
+				'Number of Inspection Covers
+					If (tank_L * 2 / 3) > ((inspect_Cover_L * 2) + 50) Then inspect_Cover_Nos = 2 Else inspect_Cover_Nos = 1
+				
+				'Inspection Covers position 'w.r.t tank Center axis
+					If inspect_Cover_Nos = 1 Then
+						inspect_Cover_1_V_Pos = 0
+						inspect_Cover_1_H_Pos = 0
+					End If
+		
+					If inspect_Cover_Nos = 2 Then
+						inspect_Cover_1_V_Pos = 0
+						inspect_Cover_1_H_Pos = (hvb_Ptch / 2)
+						inspect_Cover_2_V_Pos = 0
+						inspect_Cover_2_H_Pos = -(hvb_Ptch / 2)
+					End If
+			End If
+		
+	
+	'Inspection cover type Selection & Other calculations
+		If KVA <= 500 Then
+			inspect_Cover_Type = "round"
+			
+			inspect_Cover_Dia = inspect_Cover_W
+			inspect_Cover_Thick = lid_Thick
+			inspect_Flg_Dia = inspect_Cover_Dia
+			inspect_Flg_Thick = lid_Thick
+			
+			inspect_Cutout_Dia = inspect_Flg_Dia - (20 * 2) '20mm = Flange Width
+			
+			inspect_Flg_PCD = inspect_Flg_Dia - (10 * 2)    '10mm = Flange width / 2
+			inspect_Bolt_Nos = 6
+			inspect_Bolt_Dia = 10
+
+		Else
+			inspect_Cover_Type = "rectangle"
+
+			inspect_Cover_Thick = lid_Thick
+
+			inspect_Flg_L = inspect_Cover_L
+			inspect_Flg_W = inspect_Cover_W
+			inspect_Flg_Thick = lid_Thick
+
+			inspect_Cutout_L = inspect_Flg_L - (20 * 2) '20mm = Flange Width
+			inspect_Cutout_W = inspect_Flg_W - (20 * 2) '20mm = Flange Width
+
+			inspect_Bolt_Dia = 10
+			inspect_Bolt_H_Nos = 4
+			inspect_Bolt_V_Nos = 3
+			inspect_Bolt_H_Ptch = (inspect_Flg_L - 20) / (inspect_Bolt_H_Nos - 1)
+			inspect_Bolt_V_Ptch = (inspect_Flg_W - 20) / (inspect_Bolt_V_Nos - 1)
+		End If
+	

@@ -1,0 +1,12 @@
+Select Case KVA
+	Case Is <= 500
+		exp_Vent_ID = 40: exp_Vent_Thick = 2.9
+	Case Is <= 2000
+		exp_Vent_ID = 50: exp_Vent_Thick = 2.9
+	Case Is <= 5000
+		exp_Vent_ID = 65: exp_Vent_Thick = 3.25
+	Case Is <= 10000
+		exp_Vent_ID = 80: exp_Vent_Thick = 3.25
+	 Case Is > 10000
+		exp_Vent_ID = 100: exp_Vent_Thick = 3.65
+End Select

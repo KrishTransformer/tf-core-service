@@ -1,0 +1,61 @@
+'Conservator Pipe Relate Calculationa
+	'Conservator Pipe H.Position (From Inner Tank Wall)
+		cons_Pipe_H_Pos = cons_Pipe_ID * 2
+	
+	'Conservator Pipe Details: (For 7deg Slope)
+		If cons_Pos = "left" Then
+			cons_Pipe_Slope = 7 * (Phi / 180) '7deg Converted to Radians
+			cons_Pipe_Bend_Rad = (1.5 * cons_Pipe_ID)
+			cons_Pipe_Bend_BFactor = 0.334595   'For 7deg Pipe slope
+			cons_Pipe_Bend_Compensate = (Sin(cons_Pipe_Slope)) * cons_Pipe_Bend_Rad
+			
+			If buch_Rely = True Then
+				If buch_Rely_Vlv_Nos = 0 Then
+					cons_Pipe_A = (2 * cons_Pipe_ID) + (2 * cons_Pipe_ID)
+					cons_Pipe_B = (4 * cons_Pipe_ID) + buch_Rely_L + (4 * cons_Pipe_ID)
+				End If
+				If buch_Rely_Vlv_Nos = 1 Then
+					cons_Pipe_A = (2 * cons_Pipe_ID) + buch_Rely_Vlv_L + (3 * cons_Pipe_ID)
+					cons_Pipe_B = (4 * cons_Pipe_ID) + buch_Rely_L + (4 * cons_Pipe_ID)
+				End If
+				If buch_Rely_Vlv_Nos = 2 Then
+					cons_Pipe_A = (2 * cons_Pipe_ID) + buch_Rely_Vlv_L + (3 * cons_Pipe_ID)
+					cons_Pipe_B = (4 * cons_Pipe_ID) + buch_Rely_L + (2.5 * cons_Pipe_ID) + buch_Rely_Vlv_L + (4 * cons_Pipe_ID)
+				End If
+			Else
+				cons_Pipe_A = (3 * cons_Pipe_ID) + (2 * cons_Pipe_ID)
+				cons_Pipe_B = (4 * cons_Pipe_ID) + (4 * cons_Pipe_ID)
+			End If
+			cons_Pipe_C = (3 * cons_Pipe_ID) + lid_Thick
+			cons_Pipe_D = (Sin(cons_Pipe_Slope)) * cons_Pipe_B
+			cons_Pipe_E = Sqr((cons_Pipe_B ^ 2) - (cons_Pipe_D ^ 2))
+		End If
+		
+'Conservator Position
+	If cons_Pos = "lv side" Then
+		cons_V_Pos = hvb_Sup_H + hvb_L1
+		cons_H_Pos = tank_Thick + tank_Flg_W + (cons_Dia * 0.25)
+		cons_Pipe_L = (Sqr(((cons_Pipe_H_Pos + tank_Thick + cons_H_Pos - tank_Flg_W) ^ 2) + ((cons_V_Pos - (cons_Dia / 2)) ^ 2))) + (cons_Pipe_ID)
+	Else
+		cons_V_Pos = (lid_Thick + (cons_Pipe_A + cons_Pipe_C + cons_Pipe_D) + (cons_Dia / 2) + cons_Thick)
+		cons_H_Pos = (cons_Pipe_E - tank_Thick - cons_Pipe_H_Pos)
+					
+		'Validate the V.Position of Conservator to match the Height of bushing
+			If cons_V_Pos < (hvb_Sup_H + hvb_L1) Then
+				cons_V_Pos = hvb_Sup_H + hvb_L1
+			End If
+			
+		'Validate the H.Position of conservator to match the HV Ph-Er distance from 1st HV Bushing
+		'Update the value of 'cons_H_Pos', 'cons_Pipe_B', 'cons_Pipe_D' w.r.t new Conservator Horizontal position
+			tank_HVB_Dist = (tank_L / 2) - Hv_Ph_Ph_Incl_cap
+			
+			If ((cons_H_Pos - (cons_Dia / 2)) + tank_HVB_Dist) <= (hvb_Ph_Erth_Clear) Then
+				'New Conservator Horizontal Position
+					cons_H_Pos = Int(((((hvb_Ph_Erth_Clear - tank_HVB_Dist) + (cons_Dia / 2)) * 1.2) / 10) + 0.9) * 10
+				
+				'Update the value of 'cons_Pipe_E', 'cons_Pipe_B', 'cons_Pipe_D' w.r.t new Conservator Horizontal position
+					cons_Pipe_E = cons_H_Pos + tank_Thick + cons_Pipe_H_Pos
+					cons_Pipe_B = Sqr((cons_Pipe_E ^ 2) + ((Sin(cons_Pipe_Slope)) ^ 2))
+					cons_Pipe_D = (Sin(cons_Pipe_Slope)) * cons_Pipe_B
+			End If
+	End If
