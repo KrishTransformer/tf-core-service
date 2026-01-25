@@ -44,11 +44,10 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            rajeshmylsamy/tf-core-service:v1
-            rajeshmylsamy/tf-core-service:latest
+            krishtransformer/tf-core-service:latest
 
       # 5. Trigger Webhook for deployment
       - name: Webhook
         uses: joelwmale/webhook-action@master
         with:
-          url: "http://164.52.197.201:8085/hooks/redeploy-tf-core-service"
+          url: "http://122.166.121.189:8085/hooks/redeploy-tf-core-service"
