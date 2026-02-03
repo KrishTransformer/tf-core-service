@@ -111,7 +111,7 @@ public class LvWindingsService {
         double possibleWindowHeightMax = TwoWindingsFormulas.getWindowHeight(leastKVal, coreDiameter, twoWindings.getLVConductorMaterial(), null, twoWindings.getDryType());
         String possibleWindowHeightRange = "Note: The possible Window Height range for core dia = " + coreDiameter + "mm is " + possibleWindowHeightMin + "mm to " + possibleWindowHeightMax + "mm";
 
-        double lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getHighVoltage());
+        double lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getLowVoltage(), twoWindings.getHighVoltage());
 
         int permaWoodRing = TwoWindingsFormulas.getPermaWoodRing(twoWindings.getKVA(), twoWindings.getLowVoltage(), twoWindings.getDryType());
 
@@ -481,7 +481,7 @@ public class LvWindingsService {
         }
         else if(Objects.equals(twoWindings.getLvWindingType().toString(), "DISC")){
             if(twoWindings.getLowVoltage() >= 11000){
-                lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getHighVoltage());
+                lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getLowVoltage(), twoWindings.getHighVoltage());
                 lvWindingLength = TwoWindingsFormulas.getWindingLength(windowHeight, lvEndClearance, permaWoodRing);
             }
             lvConductorCrossSection = TwoWindingsFormulas.getConductorCrossSection(lvCurrentPerPhase, twoWindings.getLVCurrentDensity());
@@ -753,7 +753,7 @@ public class LvWindingsService {
             }
         }
         else if(Objects.equals(twoWindings.getLvWindingType().toString(), "LAYERDISC")){
-            lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getHighVoltage());
+            lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getLowVoltage(), twoWindings.getHighVoltage());
             lvWindingLength = TwoWindingsFormulas.getWindingLength(windowHeight, lvEndClearance, permaWoodRing);
             lvNumberOfLayers = 1;
             lvNoOfDuct = 0;

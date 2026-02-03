@@ -479,8 +479,10 @@ public class TwoWindingsFormulas {
         }
     }
 
-    public static Double getLvEndClearance(double KVA, EVectorGroup eVectorGroup, Double endClr, Boolean dryType, Double highVoltage){
-        double endClearance = TwoWindingsFormulas.getEndClearance(KVA,highVoltage,eVectorGroup,endClr, dryType);
+    public static Double getLvEndClearance(double KVA, EVectorGroup eVectorGroup, Double endClr, Boolean dryType, Double lowVoltage, Double highVoltage){
+        double voltage = (highVoltage > 11000 && lowVoltage > 1100) ? highVoltage : lowVoltage;
+        double endClearance = TwoWindingsFormulas.getEndClearance(KVA,voltage,eVectorGroup,endClr, dryType);
+
         int hiloGap = 0;
         if(dryType){
             if(highVoltage <= 1100){hiloGap = 15;}
@@ -594,7 +596,7 @@ public class TwoWindingsFormulas {
     }
 
     public static double getConductorCrossSection(double currentPerPhase, double currentDensity) {
-        return   (double) NumberFormattingUtils.twoDigitDecimal(currentPerPhase / currentDensity);
+        return NumberFormattingUtils.threeDigitDecimal(currentPerPhase / currentDensity);
     }
 
     public static boolean isConductorRound(double conductorXSec){
@@ -805,7 +807,7 @@ public class TwoWindingsFormulas {
     }
 
     public static double getActualConductorXSec(double revisedCondXSec, double noOfConductors) {
-        return  NumberFormattingUtils.twoDigitDecimal(revisedCondXSec * noOfConductors );
+        return  NumberFormattingUtils.threeDigitDecimal(revisedCondXSec * noOfConductors );
     }
 
     public static double getInterLayerInsulation(double voltsPerTurn, double turnsPerLayer, double conductorInsulation, boolean isEnamel, Double interLayerIns, boolean dryType) {
@@ -843,9 +845,11 @@ public class TwoWindingsFormulas {
     public static Integer getRadialThickness(double hi, int radialParallelConductors, double noOfLayers
             , double interLayerInsulation, int ducts, double ductSize, boolean isLV) {
         double factor = 0;
+        int noLayers = NumberFormattingUtils.twoDigitDecimalPart(noOfLayers) > 0 ? (int) Math.ceil(noOfLayers) : (int) noOfLayers;
+
         if(isLV){factor = 0.3;}
         double radialThickness =(hi * radialParallelConductors * noOfLayers) + (ducts * ductSize) +
-                (interLayerInsulation * (noOfLayers - 1 - ducts) + ( factor * noOfLayers));
+                (interLayerInsulation * (noLayers - 1 - ducts) + ( factor * noLayers));
 
         return NumberFormattingUtils.nextInteger(radialThickness); // Placeholder return
     }

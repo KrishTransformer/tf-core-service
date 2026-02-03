@@ -247,7 +247,7 @@ public class HvWindingsService {
             if(hvNoOfDuct > hvNumberOfLayers - 1){
                 hvNoOfDuct =(int) hvNumberOfLayers - 1;
             }
-            hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,hvInterlayerInsulation,hvNoOfDuct,hvDuctThickness, false);
+            hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers, hvInterlayerInsulation,hvNoOfDuct,hvDuctThickness, false);
             hvOd = TwoWindingsFormulas.getOD(hvId, hvRadialThickness);
             hvLmt = TwoWindingsFormulas.getLMT(hvId, hvOd);
             hvWireLength = TwoWindingsFormulas.getWireLength(hvLmt, hvTurnsPerPhase, 3, hvNoOfConductors);

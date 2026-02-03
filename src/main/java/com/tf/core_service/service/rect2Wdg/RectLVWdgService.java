@@ -90,7 +90,7 @@ public class RectLVWdgService {
         double possibleWindowHeightMax = TwoWindingsFormulas.getWindowHeight(leastKVal, coreDiameter, twoWindings.getLVConductorMaterial(), null, twoWindings.getDryType());
         String possibleWindowHeightRange = "Note: The possible Window Height range for core dia = " + coreDiameter + "mm is " + possibleWindowHeightMin + "mm to " + possibleWindowHeightMax + "mm";
 
-        double lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getHighVoltage());
+        double lvEndClearance = TwoWindingsFormulas.getLvEndClearance(twoWindings.getKVA(), twoWindings.getConnection(), twoWindings.getInnerWindings().getEndClearances(), twoWindings.getDryType(), twoWindings.getLowVoltage(), twoWindings.getHighVoltage());
         int permaWoodRing = TwoWindingsFormulas.getPermaWoodRing(twoWindings.getKVA(), twoWindings.getLowVoltage(), twoWindings.getDryType());
 
         double lvWindingLength = TwoWindingsFormulas.getWindingLength(windowHeight, lvEndClearance, permaWoodRing);
