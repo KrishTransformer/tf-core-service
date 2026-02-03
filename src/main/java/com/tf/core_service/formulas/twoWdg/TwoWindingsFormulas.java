@@ -848,7 +848,7 @@ public class TwoWindingsFormulas {
         int noLayers = NumberFormattingUtils.twoDigitDecimalPart(noOfLayers) > 0 ? (int) Math.ceil(noOfLayers) : (int) noOfLayers;
 
         if(isLV){factor = 0.3;}
-        double radialThickness =(hi * radialParallelConductors * noOfLayers) + (ducts * ductSize) +
+        double radialThickness =(hi * radialParallelConductors * noLayers) + (ducts * ductSize) +
                 (interLayerInsulation * (noLayers - 1 - ducts) + ( factor * noLayers));
 
         return NumberFormattingUtils.nextInteger(radialThickness); // Placeholder return

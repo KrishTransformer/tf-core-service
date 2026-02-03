@@ -265,7 +265,7 @@ public class HvWindingsService {
                 while(hvGradient >= gradientLimit){
                     if(hvNoOfDuct > hvNumberOfLayers){break;}
                     hvNoOfDuct = hvNoOfDuct + 1;
-                    hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, 1, hvNumberOfLayers,hvInterlayerInsulation,hvNoOfDuct,hvDuctThickness, false);
+                    hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,hvInterlayerInsulation,hvNoOfDuct,hvDuctThickness, false);
                     hvId = TwoWindingsFormulas.getID(twoWindings.getCoilDimensions().getLVOD(), lvHvGap);
                     hvOd = TwoWindingsFormulas.getOD(hvId, hvRadialThickness);
                     hvLmt = TwoWindingsFormulas.getLMT(hvId, hvOd);
@@ -600,7 +600,7 @@ public class HvWindingsService {
                 while(hvGradient >= gradientLimit){
                     if(hvNoOfDuct > hvNumberOfLayers){break;}
                     hvNoOfDuct = hvNoOfDuct + 1;
-                    hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvNoOfConductors, hvNumberOfLayers, hvInterlayerInsulation, hvNoOfDuct, hvDuctThickness, false);
+                    hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers, hvInterlayerInsulation, hvNoOfDuct, hvDuctThickness, false);
                     hvId = TwoWindingsFormulas.getID(twoWindings.getCoilDimensions().getLVOD(), lvHvGap);
                     hvOd = TwoWindingsFormulas.getOD(hvId, hvRadialThickness);
                     hvLmt = TwoWindingsFormulas.getLMT(hvId, hvOd);
