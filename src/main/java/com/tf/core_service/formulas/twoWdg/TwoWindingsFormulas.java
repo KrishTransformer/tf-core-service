@@ -112,49 +112,49 @@ public class TwoWindingsFormulas {
             return currentDensity;
         }else {
             double currentDensityValue = 0.0;
-            if (conductorMaterial.equals(Constants.COPPER) && eTransCostType.equals(ETransCostType.ECONOMIC)) {
-                currentDensityValue = 4.24;
-            } else if (conductorMaterial.equals(Constants.COPPER) && eTransCostType.equals(ETransCostType.ENERGY_EFFICIENT)) {
-                currentDensityValue = 1.5;
-            }else if(conductorMaterial.equals(Constants.ALUMINIUM) && eTransCostType.equals(ETransCostType.ECONOMIC)) {
-                currentDensityValue = 2.37;
-            }else if(conductorMaterial.equals(Constants.ALUMINIUM) && eTransCostType.equals(ETransCostType.ENERGY_EFFICIENT)) {
-                currentDensityValue = 0.6;
-            }
-
-            if (dryTempClass.equals(DryTempClass.CLASS_B)) {
-
-                if (conductorMaterial.equals(Constants.COPPER)) {
-                    if (isLv) return 1.8;
-                    else return 2.2;
-
-                } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
-                    if (isLv) return 1.4;
-                    else return 1.6;
+            if(!dryType){
+                if (conductorMaterial.equals(Constants.COPPER) && eTransCostType.equals(ETransCostType.ECONOMIC)) {
+                    currentDensityValue = 4.24;
+                } else if (conductorMaterial.equals(Constants.COPPER) && eTransCostType.equals(ETransCostType.ENERGY_EFFICIENT)) {
+                    currentDensityValue = 1.5;
+                }else if(conductorMaterial.equals(Constants.ALUMINIUM) && eTransCostType.equals(ETransCostType.ECONOMIC)) {
+                    currentDensityValue = 2.37;
+                }else if(conductorMaterial.equals(Constants.ALUMINIUM) && eTransCostType.equals(ETransCostType.ENERGY_EFFICIENT)) {
+                    currentDensityValue = 0.6;
                 }
-            }
+            }else{
+                if (dryTempClass.equals(DryTempClass.CLASS_B)) {
 
-            else if (dryTempClass.equals(DryTempClass.CLASS_F)) {
+                    if (conductorMaterial.equals(Constants.COPPER)) {
+                        if (isLv) return 1.8;
+                        else return 2.2;
 
-                if (conductorMaterial.equals(Constants.COPPER)) {
-                    if (isLv) return 2.2;
-                    else return 2.5;
-
-                } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
-                    if (isLv) return 1.6;
-                    else return 1.8;
+                    } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
+                        if (isLv) return 1.4;
+                        else return 1.6;
+                    }
                 }
-            }
+                else if (dryTempClass.equals(DryTempClass.CLASS_F)) {
 
-            else if (dryTempClass.equals(DryTempClass.CLASS_H)) {
+                    if (conductorMaterial.equals(Constants.COPPER)) {
+                        if (isLv) return 2.2;
+                        else return 2.5;
 
-                if (conductorMaterial.equals(Constants.COPPER)) {
-                    if (isLv) return 2.4;
-                    else return 2.8;
+                    } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
+                        if (isLv) return 1.6;
+                        else return 1.8;
+                    }
+                }
+                else if (dryTempClass.equals(DryTempClass.CLASS_H)) {
 
-                } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
-                    if (isLv) return 1.8;
-                    else return 2.0;
+                    if (conductorMaterial.equals(Constants.COPPER)) {
+                        if (isLv) return 2.4;
+                        else return 2.8;
+
+                    } else if (conductorMaterial.equals(Constants.ALUMINIUM)) {
+                        if (isLv) return 1.8;
+                        else return 2.0;
+                    }
                 }
             }
             return currentDensityValue;
