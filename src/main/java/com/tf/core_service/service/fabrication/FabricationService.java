@@ -246,7 +246,7 @@ public class FabricationService {
         fabrication.setHvct(HvctFormulas.calculateHvct(kVA));
         fabrication.setLvct(LvctFormulas.calculateLvct(kVA));
 
-        fabrication.setMarshBox(MarshBoxFormulas.calculateMarshBox(marshBox, tank_H));
+        fabrication.setMarshBox(MarshBoxFormulas.calculateMarshBox(kVA, marshBox, tank_H));
 
         fabrication.setOctcFlange(OctcFlangeFormula.calculateOctcFlange(isOCTC, tank_H));
 
