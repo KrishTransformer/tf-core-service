@@ -386,9 +386,11 @@ public class TwoWindingsFormulas {
         if(voltage <= 1100){
             if(KVA <= 25){
                 endClearance = 8 * 2;
-            } else if (KVA > 25 && KVA <= 100) {
+            }
+            else if (KVA > 25 && KVA <= 100) {
                 endClearance = 10 * 2;
-            }else if (KVA > 100 ) {
+            }
+            else if (KVA > 100 ) {
                 endClearance = 15 * 2;
             }
         }
@@ -462,14 +464,16 @@ public class TwoWindingsFormulas {
         if(dryType){
             if (voltage <= 1100){
                 if(KVA <= 100){endClearance = 2 * 40;} else {endClearance = 2 * 60;}
-            } else if (voltage <= 11000){
+            }
+            else if (voltage <= 11000){
                 endClearance = 2 * 140;
-            } else if (voltage <= 22000){
+            }
+            else if (voltage <= 22000){
                 endClearance = 2 * 200;
-            } else if (voltage <= 33000){
+            }
+            else if (voltage <= 33000){
                 endClearance = 2 * 240;
             }
-
         }
 
         if(endClr != null && endClr >= 0.85 * endClearance){
@@ -506,15 +510,18 @@ public class TwoWindingsFormulas {
         if (voltage >= 11000){
             if(KVA <= 5000){
                 permaWoodRing = 20;
-            } else if (KVA > 5000 && KVA <= 20000) {
+            }
+            else if (KVA > 5000 && KVA <= 20000) {
                 permaWoodRing = 25;
-            } else if (KVA > 20000 && KVA <= 50000) {
+            }
+            else if (KVA > 20000 && KVA <= 50000) {
                 permaWoodRing = 35;
-            } else if (KVA > 50000) {
+            }
+            else if (KVA > 50000) {
                 permaWoodRing = 50;
             }
-            if(dryType){permaWoodRing = 0;}
         }else permaWoodRing = 0;
+        if(dryType){permaWoodRing = 0;}
         return permaWoodRing;
     }
 
@@ -823,18 +830,25 @@ public class TwoWindingsFormulas {
         }
     }
 
-    public static Integer getDuctSize(Double windingLength, Integer ductSizeUser, boolean dryType){
+    public static Integer getDuctSize(double KVA, Double windingLength, Integer ductSizeUser, boolean dryType){
         int ductSize = 3;
-        if(windingLength <= 399){
-            ductSize = 3;
-        } else if (windingLength > 399 && windingLength <= 499) {
+        if(windingLength <= 399){ductSize = 3;}
+        else if (windingLength > 399 && windingLength <= 499) {
             ductSize = 4;
-        }else if (windingLength > 499 && windingLength <= 599) {
+        }
+        else if (windingLength > 499 && windingLength <= 599) {
             ductSize = 5;
-        }else if (windingLength > 599) {
+        }
+        else if (windingLength > 599) {
             ductSize = 6;
         }
-        if(dryType){ductSize = 2 * ductSize;}
+        if(dryType){
+            if (KVA <= 100) {ductSize = 8;}
+            else if (KVA <= 250) {ductSize = 10;}
+            else if (KVA <= 500) {ductSize = 12;}
+            else if (KVA <= 1000) {ductSize = 16;}
+            else {ductSize = 20;}
+        }
         if(ductSizeUser != null && ductSizeUser >= ductSize * 0.5){
             return ductSizeUser;
         }else{
@@ -864,9 +878,11 @@ public class TwoWindingsFormulas {
         if(drytype){
             if(voltage <= 1100){
                 coreLvGap = KVA<=50 ? 6 : 10;
-            } else if (voltage <= 3300) {
+            }
+            else if (voltage <= 3300) {
                 coreLvGap = 12;
-            } else {coreLvGap = 20;}
+            }
+            else {coreLvGap = 20;}
         } else{
             if(voltage <= 1100){
             if(KVA <= 25){
@@ -884,7 +900,7 @@ public class TwoWindingsFormulas {
             else if (voltage > 1100 && voltage <= 6600) {
             if(KVA <= 1000){
                 coreLvGap = 6;
-            } else if (KVA > 10000) {
+            } else if (KVA <= 10000) {
                 coreLvGap = 7;
             }
         }
@@ -936,13 +952,15 @@ public class TwoWindingsFormulas {
             } else if (KVA > 500) {
                 lvHvGap = 6;
             }
-        } else if (highVoltage > 1100 && highVoltage <= 6600) {
+        }
+        else if (highVoltage > 1100 && highVoltage <= 6600) {
             if(KVA <= 1000){
                 lvHvGap = 6;
             } else if (KVA > 1000) {
                 lvHvGap = 7;
             }
-        }else if (highVoltage > 6600 && highVoltage <= 11000) {
+        }
+        else if (highVoltage > 6600 && highVoltage <= 11000) {
             if(KVA <= 100){
                 lvHvGap = 7;
             } else if (KVA > 100 && KVA <= 2500) {
@@ -950,13 +968,16 @@ public class TwoWindingsFormulas {
             }else if (KVA > 2500) {
                 lvHvGap = 9;
             }
-        }else if (highVoltage > 22000 && highVoltage <= 33000) {
+        }
+        else if (highVoltage > 22000 && highVoltage <= 33000) {
             lvHvGap = 18;
-        }else if (highVoltage > 33000 && highVoltage <= 66000) {
+        }
+        else if (highVoltage > 33000 && highVoltage <= 66000) {
             if(KVA <= 60000){
                 lvHvGap = 28;
             }
-        }else if (highVoltage > 66000 && highVoltage <= 132000) {
+        }
+        else if (highVoltage > 66000 && highVoltage <= 132000) {
             lvHvGap = Objects.equals(eVectorGroup.name().charAt(0), 'D') ? 54 : 43;
         }
         if(dryType){

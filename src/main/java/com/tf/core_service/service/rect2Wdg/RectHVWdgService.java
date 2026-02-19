@@ -85,7 +85,7 @@ public class RectHVWdgService {
         double hvEndClearance = TwoWindingsFormulas.getEndClearance(twoWindings.getKVA(), twoWindings.getHighVoltage(), twoWindings.getConnection(), twoWindings.getOuterWindings().getEndClearances(),twoWindings.getDryType());
 
         double hvWindingLength = TwoWindingsFormulas.getWindingLength(twoWindings.getCore().getLimbHt(), hvEndClearance, twoWindings.getPermaWoodRing());
-        hvDuctThickness = TwoWindingsFormulas.getDuctSize(hvWindingLength, hvDuctThickness,twoWindings.getDryType());
+        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(), hvWindingLength, hvDuctThickness,twoWindings.getDryType());
 
         double hvConductorCrossSection = TwoWindingsFormulas.getConductorCrossSection(hvCurrentAtLowest, twoWindings.getHVCurrentDensity());
         int hvNoOfConductors = TwoWindingsFormulas.getNumberOfConductors(hvConductorCrossSection, twoWindings.getHVConductorMaterial());
