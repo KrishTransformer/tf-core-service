@@ -95,7 +95,7 @@ public class RectLVWdgService {
 
         double lvWindingLength = TwoWindingsFormulas.getWindingLength(windowHeight, lvEndClearance, permaWoodRing);
 
-        lvDuctThickness = TwoWindingsFormulas.getDuctSize(lvWindingLength, lvDuctThickness,twoWindings.getDryType());
+        lvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(), lvWindingLength, lvDuctThickness,twoWindings.getDryType());
 
         //Disc Winding calculation variables
         double lvDiscDuctsSize = TwoWindingsFormulas.getDiscDuctSize(twoWindings.getLowVoltage(), Boolean.TRUE, twoWindings.getConnection());

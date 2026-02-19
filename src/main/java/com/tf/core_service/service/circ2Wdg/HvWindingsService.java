@@ -82,7 +82,7 @@ public class HvWindingsService {
         double hvEndClearance = TwoWindingsFormulas.getEndClearance(twoWindings.getKVA(), twoWindings.getHighVoltage(), twoWindings.getConnection(), twoWindingRequest.getOuterWindings().getEndClearances(), twoWindings.getDryType());
 
         double hvWindingLength = TwoWindingsFormulas.getWindingLength(twoWindings.getCore().getLimbHt(), hvEndClearance, twoWindings.getPermaWoodRing());
-        hvDuctThickness = TwoWindingsFormulas.getDuctSize(hvWindingLength, hvDuctThickness, twoWindings.getDryType());
+        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(), hvWindingLength, hvDuctThickness, twoWindings.getDryType());
 
         double hvConductorCrossSection = TwoWindingsFormulas.getConductorCrossSection(hvCurrentAtLowest, twoWindings.getHVCurrentDensity());
         int hvNoOfConductors = TwoWindingsFormulas.getNumberOfConductors(hvConductorCrossSection, twoWindings.getHVConductorMaterial());
@@ -383,10 +383,10 @@ public class HvWindingsService {
             if(hvRadialThickness >= 65 && hvNoOfDuct == 0){
                 hvNoOfDuct = 1;
                 if(twoWindings.getKVA() <= 5000){
-                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(), 399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                     hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                 }else{
-                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                     hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                 }
             }
@@ -417,10 +417,10 @@ public class HvWindingsService {
                     if(hvRadialThickness >= 65 && hvNoOfDuct == 0){
                         hvNoOfDuct = 1;
                         if(twoWindings.getKVA() <= 5000){
-                            hvDuctThickness = TwoWindingsFormulas.getDuctSize(399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                            hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                             hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                         }else{
-                            hvDuctThickness = TwoWindingsFormulas.getDuctSize(499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                            hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                             hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                         }
                     }
@@ -448,10 +448,10 @@ public class HvWindingsService {
                     if(hvNoOfDuct > 1){break;}
                     hvNoOfDuct = hvNoOfDuct + 1;
                     if(twoWindings.getKVA() <= 5000){
-                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(399.0, hvDuctThickness, twoWindings.getDryType());
+                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),399.0, hvDuctThickness, twoWindings.getDryType());
                         hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                     }else{
-                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(499.0, hvDuctThickness, twoWindings.getDryType());
+                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),499.0, hvDuctThickness, twoWindings.getDryType());
                         hvRadialThickness = TwoWindingsFormulas.getDiscRadialThickness(hvHeight, hvRadialParallelConductors, hvConductorInsulation, insulationExpasion, (int) hvNumberOfLayers, hvNoOfDuct, hvDuctThickness);
                     }
                     hvId = TwoWindingsFormulas.getID(twoWindings.getCoilDimensions().getLVOD(), lvHvGap);
@@ -481,7 +481,7 @@ public class HvWindingsService {
             hvTurnsAtHighest = hvTurnsPerCoil * hvNoOfCoils;
             hvGapBwCoil = TwoWindingsFormulas.getGapBetweenCoils(twoWindings.getKVA(), twoWindings.getHighVoltage());
             hvWdgLengthPerCoil = TwoWindingsFormulas.getWindingLengthPerCoil(hvWindingLength, hvGapBwCoil, hvNoOfCoils);
-            hvDuctThickness = TwoWindingsFormulas.getDuctSize((double) hvWdgLengthPerCoil, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+            hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(), (double) hvWdgLengthPerCoil, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
             if(hvNoOfConductors == 1){
                 if(hvIsConductorRound){
                     hvBreadth = TwoWindingsFormulas.getRoundCondDia(hvConductorCrossSection, twoWindingRequest.getOuterWindings().getCondBreadth(), twoWindings.getHVConductorMaterial());
@@ -655,10 +655,10 @@ public class HvWindingsService {
             if(hvRadialThickness >= 65 && hvNoOfDuct == 0){
                 hvNoOfDuct = 1;
                 if(twoWindings.getKVA() <= 5000){
-                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),399.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                     hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,0, hvNoOfDuct, hvDuctThickness,false);
                 }else{
-                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
+                    hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),499.0, twoWindingRequest.getOuterWindings().getDuctSize(), twoWindings.getDryType());
                     hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,0, hvNoOfDuct, hvDuctThickness, false);
                 }
             }
@@ -681,10 +681,10 @@ public class HvWindingsService {
                     if(hvNoOfDuct > hvNumberOfLayers){break;}
                     hvNoOfDuct = hvNoOfDuct + 1;
                     if(twoWindings.getKVA() <= 5000){
-                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(399.0, hvDuctThickness, twoWindings.getDryType());
+                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),399.0, hvDuctThickness, twoWindings.getDryType());
                         hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,0, hvNoOfDuct, hvDuctThickness, false);
                     }else{
-                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(499.0, hvDuctThickness, twoWindings.getDryType());
+                        hvDuctThickness = TwoWindingsFormulas.getDuctSize(twoWindings.getKVA(),499.0, hvDuctThickness, twoWindings.getDryType());
                         hvRadialThickness = TwoWindingsFormulas.getRadialThickness(hvHeightInsulated, hvRadialParallelConductors, hvNumberOfLayers,0, hvNoOfDuct, hvDuctThickness, false);
                     }
                     hvId = TwoWindingsFormulas.getID(twoWindings.getCoilDimensions().getLVOD(), lvHvGap);
